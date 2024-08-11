@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once visible
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
-    <footer className="bg-gray-900 text-white py-10">
+    <footer
+      ref={ref}
+      className={`bg-gray-900 text-white py-10 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
+    >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-5">
         {/* Logo and About Section */}
         <div>

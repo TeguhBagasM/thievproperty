@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import CountryDropdown from "./CountryDropdown";
 import PropertyDropdown from "./PropertyDropdown";
 import PriceRangeDropdown from "./PriceRangeDropdown";
@@ -8,9 +8,38 @@ import { HouseContext } from "./HouseContext";
 
 const Search = () => {
   const { handleClick } = useContext(HouseContext);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once visible
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  const animationClass = isVisible ? "animate-slide-bottom" : "opacity-0";
 
   return (
-    <div className="px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 relative lg:-top-4 lg:shadow-1 bg-white lg:bg-transparent lg:backdrop-blur rounded-lg">
+    <div
+      ref={ref}
+      className={`px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 relative lg:-top-4 lg:shadow-1 bg-white lg:bg-transparent lg:backdrop-blur rounded-lg transition-opacity duration-700 ${animationClass}`}
+    >
       <CountryDropdown />
       <PropertyDropdown />
       <PriceRangeDropdown />
