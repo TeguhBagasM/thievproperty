@@ -4,6 +4,10 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import HouseContextProvider from "./components/HouseContext";
+import "aos/dist/aos.css"; // Import AOS styles
+import AOS from "aos";
+
+AOS.init(); // Initialize AOS
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
