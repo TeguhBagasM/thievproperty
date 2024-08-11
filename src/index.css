@@ -45,6 +45,14 @@
   }
 }
 
+.animate-slide-right {
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
 @keyframes slideInFromBottom {
   from {
     opacity: 0;
@@ -56,14 +64,21 @@
   }
 }
 
-.animate-slide-right {
-  animation: slideInFromRight 0.8s ease-out;
-}
-
-.animate-slide-left {
-  animation: slideInFromLeft 0.8s ease-out;
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .animate-slide-bottom {
   animation: slideInFromBottom 0.8s ease-out;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 1s ease-out;
 }

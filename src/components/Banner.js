@@ -1,13 +1,60 @@
-import React from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 import Image from "../assets/img/house-banner.png";
 import Search from "../components/Search";
 
 const Banner = () => {
+  const [isVisible, setIsVisible] = useState({ title: false, image: false });
+  const titleRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({ ...prev, title: true }));
+          observer.disconnect(); // Stop observing once visible
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const imageObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({ ...prev, image: true }));
+          imageObserver.disconnect(); // Stop observing once visible
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    if (imageRef.current) {
+      imageObserver.observe(imageRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+      if (imageRef.current) {
+        imageObserver.unobserve(imageRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="h-full max-h-[640px] mb-8 xl:mb-24">
       <div className="flex flex-col lg:flex-row">
-        <div className="lg:ml-8 xl:ml-[135px] flex flex-col items-center lg:items-start text-center lg:text-left justify-center flex-1 px-4 lg:px-0">
+        <div
+          ref={titleRef}
+          className={`lg:ml-8 xl:ml-[135px] flex flex-col items-center lg:items-start text-center lg:text-left justify-center flex-1 px-4 lg:px-0 transition-opacity duration-700 ${
+            isVisible.title ? "animate-slide-bottom" : "opacity-0"
+          }`}
+        >
           <h1 className="text-4xl lg:text-[58px] font-semibold leading-none mb-6">
             <span className="text-violet-700">Rent</span> Your Dream House With Us.
           </h1>
@@ -16,7 +63,12 @@ const Banner = () => {
             available for rent.
           </p>
         </div>
-        <div className="hidden flex-1 lg:flex justify-end items-end">
+        <div
+          ref={imageRef}
+          className={`hidden flex-1 lg:flex justify-end items-end transition-opacity duration-700 ${
+            isVisible.image ? "animate-zoom-in" : "opacity-0"
+          }`}
+        >
           <img src={Image} alt="Banner" />
         </div>
       </div>

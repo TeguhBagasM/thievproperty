@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BiArea, BiBath, BiBed } from "react-icons/bi";
 
-const House = ({ house, animationDirection = "bottom" }) => {
+const House = ({ house, animationDirection = "left" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -31,9 +31,7 @@ const House = ({ house, animationDirection = "bottom" }) => {
   const animationClass = isVisible
     ? animationDirection === "right"
       ? "animate-slide-right"
-      : animationDirection === "left"
-      ? "animate-slide-left"
-      : "animate-slide-bottom"
+      : "animate-slide-left"
     : "";
 
   return (
