@@ -16,18 +16,19 @@ const House = ({ house, animationDirection = "left" }) => {
       { threshold: 0.1 } // Trigger when 10% of the element is visible
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current; // Save ref.current to a variable
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef); // Use the saved variable
       }
     };
   }, []);
 
-  // Choose animation class based on direction prop
   const animationClass = isVisible
     ? animationDirection === "right"
       ? "animate-slide-right"
