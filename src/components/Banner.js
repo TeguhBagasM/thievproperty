@@ -8,6 +8,9 @@ const Banner = () => {
   const imageRef = useRef(null);
 
   useEffect(() => {
+    const titleElement = titleRef.current;
+    const imageElement = imageRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -28,20 +31,20 @@ const Banner = () => {
       { threshold: 0.1 }
     );
 
-    if (titleRef.current) {
-      observer.observe(titleRef.current);
+    if (titleElement) {
+      observer.observe(titleElement);
     }
 
-    if (imageRef.current) {
-      imageObserver.observe(imageRef.current);
+    if (imageElement) {
+      imageObserver.observe(imageElement);
     }
 
     return () => {
-      if (titleRef.current) {
-        observer.unobserve(titleRef.current);
+      if (titleElement) {
+        observer.unobserve(titleElement);
       }
-      if (imageRef.current) {
-        imageObserver.unobserve(imageRef.current);
+      if (imageElement) {
+        imageObserver.unobserve(imageElement);
       }
     };
   }, []);
