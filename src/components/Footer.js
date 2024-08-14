@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { BiHeart } from "react-icons/bi";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
@@ -101,7 +102,8 @@ const Footer = () => {
       </div>
 
       <div className="mt-8 border-t border-gray-800 pt-4 text-center text-gray-500">
-        &copy; {new Date().getFullYear()} MyProperty. All rights reserved.
+        &copy; {new Date().getFullYear()} Made with <BiHeart className="inline text-red-500" /> by
+        Teguh Bagas M
       </div>
     </footer>
   );
