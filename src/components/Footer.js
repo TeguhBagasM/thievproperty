@@ -16,13 +16,15 @@ const Footer = () => {
       { threshold: 0.1 } // Trigger when 10% of the element is visible
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current; // Save ref.current to a variable
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef); // Use the saved variable
       }
     };
   }, []);
@@ -33,7 +35,6 @@ const Footer = () => {
       className={`bg-gray-900 text-white py-10 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
     >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-5">
-        {/* Logo and About Section */}
         <div>
           <h2 className="text-2xl font-bold mb-4">MyProperty</h2>
           <p className="text-gray-400">
@@ -42,7 +43,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Links Section */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul>
@@ -69,7 +69,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Media Section */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
@@ -101,7 +100,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Section */}
       <div className="mt-8 border-t border-gray-800 pt-4 text-center text-gray-500">
         &copy; {new Date().getFullYear()} MyProperty. All rights reserved.
       </div>
