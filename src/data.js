@@ -11,6 +11,7 @@ import House9 from "./assets/img/houses/house9.png";
 import House10 from "./assets/img/houses/house10.png";
 import House11 from "./assets/img/houses/house11.png";
 import House12 from "./assets/img/houses/house12.png";
+
 // import house large images
 import House1Lg from "./assets/img/houses/house1lg.png";
 import House2Lg from "./assets/img/houses/house2lg.png";
@@ -32,6 +33,7 @@ import Apartment3 from "./assets/img/apartments/a3.png";
 import Apartment4 from "./assets/img/apartments/a4.png";
 import Apartment5 from "./assets/img/apartments/a5.png";
 import Apartment6 from "./assets/img/apartments/a6.png";
+
 // import apartments large images
 import Apartment1Lg from "./assets/img/apartments/a1lg.png";
 import Apartment2Lg from "./assets/img/apartments/a2lg.png";
