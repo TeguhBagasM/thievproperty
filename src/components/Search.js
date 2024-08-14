@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import CountryDropdown from "./CountryDropdown";
 import PropertyDropdown from "./PropertyDropdown";
 import PriceRangeDropdown from "./PriceRangeDropdown";
-
 import { RiSearch2Line } from "react-icons/ri";
 import { HouseContext } from "./HouseContext";
 
@@ -22,13 +21,15 @@ const Search = () => {
       { threshold: 0.1 } // Trigger when 10% of the element is visible
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current; // Save ref.current to a variable
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef); // Use the saved variable
       }
     };
   }, []);
