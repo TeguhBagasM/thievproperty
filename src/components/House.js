@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BiArea, BiBath, BiBed } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const House = ({ house, animationDirection = "left" }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,12 +66,18 @@ const House = ({ house, animationDirection = "left" }) => {
             <span className="text-sm">{house.surface}</span>
           </div>
         </div>
-        <div className="text-lg font-bold text-violet-600">
+        <div className="text-lg font-bold text-violet-600 mb-4">
           {new Intl.NumberFormat("id-ID", {
             style: "currency",
             currency: "IDR",
           }).format(house.price)}
         </div>
+        <Link
+          to={`/property/${house.id}`}
+          className="block w-full text-center bg-violet-600 text-white py-2 rounded-md hover:bg-violet-700 transition"
+        >
+          View Details
+        </Link>
       </div>
     </div>
   );
