@@ -74,7 +74,7 @@ export const housesData = [
     price: "1500000000",
     agent: {
       image: Agent1,
-      name: "Patricia Tullert",
+      name: "Nur Auliya Putri",
       phone: "0812 3456 7890",
     },
   },
@@ -95,8 +95,8 @@ export const housesData = [
     price: "2000000000",
     agent: {
       image: Agent2,
-      name: "Daryl Hawker",
-      phone: "0812 3456 7890",
+      name: "Bahara Putra",
+      phone: "+6281321821374",
     },
   },
   {
@@ -116,7 +116,7 @@ export const housesData = [
     price: "2500000000",
     agent: {
       image: Agent3,
-      name: "Amado Smith",
+      name: "Teguh Karya",
       phone: "0812 3456 7890",
     },
   },
@@ -137,7 +137,7 @@ export const housesData = [
     price: "2800000000",
     agent: {
       image: Agent4,
-      name: "Kaitlyn Gonzalez",
+      name: "Salma Salsabilla",
       phone: "0812 3456 7890",
     },
   },
@@ -158,7 +158,7 @@ export const housesData = [
     price: "3000000000",
     agent: {
       image: Agent5,
-      name: "Grover Robinson",
+      name: "Rifki Hikmali",
       phone: "0812 3456 7890",
     },
   },
@@ -179,7 +179,7 @@ export const housesData = [
     price: "3500000000",
     agent: {
       image: Agent6,
-      name: "Karen Sorensen",
+      name: "Nurulita Septiani",
       phone: "0812 3456 7890",
     },
   },
@@ -200,7 +200,7 @@ export const housesData = [
     price: "1200000000",
     agent: {
       image: Agent7,
-      name: "Jawhar Shamil Naser",
+      name: "Valentino Simajuntak",
       phone: "0812 3456 7890",
     },
   },
@@ -221,7 +221,7 @@ export const housesData = [
     price: "1500000000",
     agent: {
       image: Agent8,
-      name: "Juana Douglass",
+      name: "Putri Dwi Rahayu",
       phone: "0812 3456 7890",
     },
   },
@@ -242,7 +242,7 @@ export const housesData = [
     price: "1200000000",
     agent: {
       image: Agent9,
-      name: "Dewi Kartika",
+      name: "Ridhwan Zaki",
       phone: "0815 6789 0123",
     },
   },
@@ -263,7 +263,7 @@ export const housesData = [
     price: "1800000000",
     agent: {
       image: Agent7,
-      name: "Siti Nurhaliza",
+      name: "Valentino Simajuntak",
       phone: "0812 1234 5678",
     },
   },
@@ -284,7 +284,7 @@ export const housesData = [
     price: "2500000000",
     agent: {
       image: Agent8,
-      name: "Agus Pratama",
+      name: "Putri Dwi Rahayu",
       phone: "0813 2345 6789",
     },
   },
@@ -305,7 +305,7 @@ export const housesData = [
     price: "1300000000",
     agent: {
       image: Agent9,
-      name: "Rina Wijaya",
+      name: "Ridhwan Zaki",
       phone: "0814 3456 7890",
     },
   },
@@ -347,7 +347,7 @@ export const housesData = [
     price: "3000000000",
     agent: {
       image: Agent11,
-      name: "Budi Hartono",
+      name: "Puan Mahalini",
       phone: "0816 5678 9012",
     },
   },
@@ -368,7 +368,7 @@ export const housesData = [
     price: "1700000000",
     agent: {
       image: Agent12,
-      name: "Andi Prasetyo",
+      name: "Rafli Rizqullah",
       phone: "0817 6789 0123",
     },
   },
@@ -390,7 +390,7 @@ export const housesData = [
     price: "1900000000",
     agent: {
       image: Agent4,
-      name: "Dian Sastro",
+      name: "Salma Salsabilla",
       phone: "0812 3456 7890",
     },
   },
@@ -432,7 +432,7 @@ export const housesData = [
     price: "2100000000",
     agent: {
       image: Agent6,
-      name: "Rina Wijaya",
+      name: "Nurulita Septiani",
       phone: "0814 5678 9012",
     },
   },
