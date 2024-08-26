@@ -47,7 +47,7 @@ const House = ({ house, animationDirection = "left" }) => {
             {house.type}
           </div>
           <div className="bg-violet-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-            {house.country}
+            {house.city}
           </div>
         </div>
         <div className="text-lg font-bold mb-2 text-gray-800">{house.address}</div>
@@ -65,7 +65,7 @@ const House = ({ house, animationDirection = "left" }) => {
             <span className="text-sm">{house.surface}</span>
           </div>
         </div>
-        <div className="text-lg font-bold text-violet-600">{house.price}</div>
+        <div className="text-lg font-bold text-violet-600">Rp. {house.price}</div>
       </div>
     </div>
   );

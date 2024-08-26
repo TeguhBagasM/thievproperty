@@ -12,7 +12,7 @@ const PropertyDetails = () => {
     return <div>Property not found</div>;
   }
 
-  const { imageLg, type, country, address, bedrooms, bathrooms, surface, price, description } = house;
+  const { imageLg, type, city, address, bedrooms, bathrooms, surface, price, description } = house;
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -22,7 +22,7 @@ const PropertyDetails = () => {
       <div className="bg-white shadow-lg rounded-lg p-6">
         <img className="w-full h-[400px] object-cover rounded-t-lg mb-4" src={imageLg} alt={address} />
         <div className="mb-4 text-2xl font-bold">{address}</div>
-        <div className="text-xl text-gray-700 mb-4">{country}</div>
+        <div className="text-xl text-gray-700 mb-4">{city}</div>
         <div className="text-lg font-semibold mb-4">{type}</div>
         <div className="flex gap-x-4 mb-4">
           <div className="flex items-center text-gray-600 gap-1">

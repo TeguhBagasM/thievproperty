@@ -5,20 +5,20 @@ export const HouseContext = React.createContext();
 
 const HouseContextProvider = ({ children }) => {
   const [houses, setHouses] = useState(housesData);
-  const [country, setCountry] = useState("Location (any)");
-  const [countries, setCountries] = useState([]);
+  const [city, setCity] = useState("Location (any)");
+  const [cities, setCities] = useState([]);
   const [property, setProperty] = useState("Property type (any)");
   const [properties, setProperties] = useState([]);
   const [price, setPrice] = useState("Price range (any)");
   const [loading, setLoading] = useState(false);
 
-  // to get all countries and remove duplicates when component mounts
+  // to get all cities and remove duplicates when component mounts
   useEffect(() => {
-    const allCountries = houses.map((house) => {
-      return house.country;
+    const allCities = houses.map((house) => {
+      return house.city;
     });
-    const uniqueCountries = ["Location (any)", ...new Set(allCountries)];
-    setCountries(uniqueCountries);
+    const uniqueCities = ["Location (any)", ...new Set(allCities)];
+    setCities(uniqueCities);
   }, [houses]);
 
   useEffect(() => {
@@ -41,11 +41,11 @@ const HouseContextProvider = ({ children }) => {
 
     const filteredHouses = housesData.filter((house) => {
       const housePrice = parseInt(house.price);
-      const isCountryMatch = isDefault(country) || house.country === country;
+      const isCityMatch = isDefault(city) || house.city === city;
       const isPropertyMatch = isDefault(property) || house.type === property;
       const isPriceMatch = isDefault(price) || (housePrice >= minPrice && housePrice <= maxPrice);
 
-      return isCountryMatch && isPropertyMatch && isPriceMatch;
+      return isCityMatch && isPropertyMatch && isPriceMatch;
     });
 
     setTimeout(() => {
@@ -57,9 +57,9 @@ const HouseContextProvider = ({ children }) => {
   return (
     <HouseContext.Provider
       value={{
-        country,
-        setCountry,
-        countries,
+        city,
+        setCity,
+        cities,
         property,
         setProperty,
         properties,

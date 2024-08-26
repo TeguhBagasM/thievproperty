@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import CountryDropdown from "./CountryDropdown";
+import CityDropdown from "./CityDropdown";
 import PropertyDropdown from "./PropertyDropdown";
 import PriceRangeDropdown from "./PriceRangeDropdown";
 import { RiSearch2Line } from "react-icons/ri";
@@ -41,7 +41,7 @@ const Search = () => {
       ref={ref}
       className={`px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 relative lg:-top-4 lg:shadow-1 bg-white lg:bg-transparent lg:backdrop-blur rounded-lg transition-opacity duration-700 ${animationClass}`}
     >
-      <CountryDropdown />
+      <CityDropdown />
       <PropertyDropdown />
       <PriceRangeDropdown />
 
