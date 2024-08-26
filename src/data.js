@@ -75,7 +75,7 @@ export const housesData = [
     agent: {
       image: Agent1,
       name: "Nur Auliya Putri",
-      phone: "0812 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -117,7 +117,7 @@ export const housesData = [
     agent: {
       image: Agent3,
       name: "Teguh Karya",
-      phone: "0812 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -138,7 +138,7 @@ export const housesData = [
     agent: {
       image: Agent4,
       name: "Salma Salsabilla",
-      phone: "0812 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -159,7 +159,7 @@ export const housesData = [
     agent: {
       image: Agent5,
       name: "Rifki Hikmali",
-      phone: "0812 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -180,7 +180,7 @@ export const housesData = [
     agent: {
       image: Agent6,
       name: "Nurulita Septiani",
-      phone: "0812 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -201,7 +201,7 @@ export const housesData = [
     agent: {
       image: Agent7,
       name: "Valentino Simajuntak",
-      phone: "0812 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -222,7 +222,7 @@ export const housesData = [
     agent: {
       image: Agent8,
       name: "Putri Dwi Rahayu",
-      phone: "0812 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -243,7 +243,7 @@ export const housesData = [
     agent: {
       image: Agent9,
       name: "Ridhwan Zaki",
-      phone: "0815 6789 0123",
+      phone: "+6281321821374",
     },
   },
   {
@@ -264,7 +264,7 @@ export const housesData = [
     agent: {
       image: Agent7,
       name: "Valentino Simajuntak",
-      phone: "0812 1234 5678",
+      phone: "+6281321821374",
     },
   },
   {
@@ -285,7 +285,7 @@ export const housesData = [
     agent: {
       image: Agent8,
       name: "Putri Dwi Rahayu",
-      phone: "0813 2345 6789",
+      phone: "+6281321821374",
     },
   },
   {
@@ -306,7 +306,7 @@ export const housesData = [
     agent: {
       image: Agent9,
       name: "Ridhwan Zaki",
-      phone: "0814 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -327,7 +327,7 @@ export const housesData = [
     agent: {
       image: Agent10,
       name: "Dewi Lestari",
-      phone: "0815 4567 8901",
+      phone: "+6281321821374",
     },
   },
   {
@@ -348,7 +348,7 @@ export const housesData = [
     agent: {
       image: Agent11,
       name: "Puan Mahalini",
-      phone: "0816 5678 9012",
+      phone: "+6281321821374",
     },
   },
   {
@@ -369,7 +369,7 @@ export const housesData = [
     agent: {
       image: Agent12,
       name: "Rafli Rizqullah",
-      phone: "0817 6789 0123",
+      phone: "+6281321821374",
     },
   },
 
@@ -391,7 +391,7 @@ export const housesData = [
     agent: {
       image: Agent4,
       name: "Salma Salsabilla",
-      phone: "0812 3456 7890",
+      phone: "+6281321821374",
     },
   },
   {
@@ -412,7 +412,7 @@ export const housesData = [
     agent: {
       image: Agent5,
       name: "Agung Prasetyo",
-      phone: "0813 4567 8910",
+      phone: "+6281321821374",
     },
   },
   {
@@ -433,7 +433,7 @@ export const housesData = [
     agent: {
       image: Agent6,
       name: "Nurulita Septiani",
-      phone: "0814 5678 9012",
+      phone: "+6281321821374",
     },
   },
 ];

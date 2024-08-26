@@ -12,7 +12,6 @@ const PropertyDetails = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    phone: "",
     message: `Hello, I'm interested in the ${house ? house.type : ""}.`,
   });
 
@@ -35,14 +34,15 @@ const PropertyDetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Redirect to WhatsApp with the form data
-    const message = encodeURIComponent(form.message);
-    const whatsappUrl = `https://wa.me/${agentPhone}?text=${message}`;
+    // Create the message with name, email, and property details
+    const message = `Name: ${form.name}\nEmail: ${form.email}\n\nMessage: ${form.message}\n\nProperty Address: ${address}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${agentPhone}?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6 flex gap-6">
+    <div className="max-w-7xl mx-auto p-6 flex flex-col lg:flex-row gap-6">
       <Link to="/" className="text-blue-500 hover:underline mb-4 block">
         &larr; Back
       </Link>
@@ -51,7 +51,7 @@ const PropertyDetails = () => {
         <div className="mb-4 text-2xl font-bold">{address}</div>
         <div className="text-xl text-gray-700 mb-4">{city}</div>
         <div className="text-lg font-semibold mb-4">{type}</div>
-        <div className="flex gap-x-4 mb-4">
+        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4">
           <div className="flex items-center text-gray-600 gap-1">
             <BiBed className="text-xl" />
             <span>{bedrooms} Beds</span>
@@ -73,7 +73,7 @@ const PropertyDetails = () => {
         </div>
         <div className="text-lg text-gray-800 mb-6">{description}</div>
       </div>
-      <div className="w-80 bg-white shadow-lg rounded-lg p-6">
+      <div className="w-full lg:w-80 bg-white shadow-lg rounded-lg p-6">
         <img className="w-16 h-16 rounded-full mb-4 mx-auto" src={agentImage} alt={agentName} />
         <div className="text-center mb-4">
           <div className="text-xl font-semibold">{agentName}</div>
@@ -95,16 +95,17 @@ const PropertyDetails = () => {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-              Phone
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              Email
             </label>
             <input
-              id="phone"
-              name="phone"
-              type="tel"
-              value={form.phone}
+              id="email"
+              name="email"
+              type="email"
+              value={form.email}
               onChange={handleChange}
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-violet-500 focus:ring focus:ring-violet-500 focus:ring-opacity-50 p-2"
+              required
             />
           </div>
           <div>
