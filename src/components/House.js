@@ -65,7 +65,12 @@ const House = ({ house, animationDirection = "left" }) => {
             <span className="text-sm">{house.surface}</span>
           </div>
         </div>
-        <div className="text-lg font-bold text-violet-600">Rp. {house.price}</div>
+        <div className="text-lg font-bold text-violet-600">
+          {new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+          }).format(house.price)}
+        </div>
       </div>
     </div>
   );
