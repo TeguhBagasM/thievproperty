@@ -37,9 +37,9 @@ const Footer = () => {
     >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-5">
         <div>
-          <h2 className="text-2xl font-bold mb-4">MyProperty</h2>
+          <h2 className="text-2xl font-bold mb-4">ThievProperty</h2>
           <p className="text-gray-400">
-            MyProperty adalah platform pencarian properti terbaik di Indonesia, memberikan kemudahan
+            ThievProperty adalah platform pencarian properti terbaik di Indonesia, memberikan kemudahan
             dalam menemukan properti impian Anda.
           </p>
         </div>
